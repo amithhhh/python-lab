@@ -41,8 +41,8 @@ class Matrix:
         return temp
 
 
-m = Matrix(3, 3)
-n = Matrix(3, 3)
+m = Matrix(2, 2)
+n = Matrix(2, 2)
 
 print("Enter the first matrix:")
 m.initMatrix()
