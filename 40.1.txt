@@ -1,1 +1,2 @@
 ERROR:root:ZeroDivisionError: Zero at the denominator
+ERROR:root:ZeroDivisionError: Zero at the denominator
