@@ -12,7 +12,7 @@ class Matrix:
     def __add__(self, other):
         if self.rows != other.rows or self.cols != other.cols:
             print("Rows or columns mismatch for addition.")
-            exit()
+            return None
         temp = Matrix(self.rows, self.cols)
         for i in range(self.rows):
             for j in range(self.cols):
@@ -22,7 +22,7 @@ class Matrix:
     def __sub__(self, other):
         if self.rows != other.rows or self.cols != other.cols:
             print("Rows or columns mismatch for subtraction.")
-            exit()
+            return None
         temp = Matrix(self.rows, self.cols)
         for i in range(self.rows):
             for j in range(self.cols):
@@ -32,7 +32,7 @@ class Matrix:
     def __mul__(self, other):
         if self.cols != other.rows:
             print("Rows or columns mismatch for multiplication.")
-            exit()
+            return None
         temp = Matrix(self.rows, other.cols)
         for i in range(self.rows):
             for j in range(other.cols):
@@ -40,9 +40,12 @@ class Matrix:
                     temp.matrix[i][j] += self.matrix[i][k] * other.matrix[k][j]
         return temp
 
-
-m = Matrix(2, 2)
-n = Matrix(2, 2)
+row1 = int(input("Enter the row of first matrix: "))
+col1 = int(input("Enter the column of second matrix: "))
+m = Matrix(row1, col1)
+row2 = int(input("Enter the row of second matrix: "))
+col2 = int(input("Enter the column of second matrix: "))
+n = Matrix(row2, col2)
 
 print("Enter the first matrix:")
 m.initMatrix()
@@ -50,13 +53,16 @@ print("Enter the second matrix:")
 n.initMatrix()
 
 o = m + n
-print("Addition:")
-print(o.matrix)
+if o != None:
+	print("Addition:")
+	print(o.matrix)
 
 p = m - n
-print("Subtraction:")
-print(p.matrix)
+if p !=  None:
+	print("Subtraction:")
+	print(p.matrix)
 
 q = m * n
-print("Multiplication:")
-print(q.matrix)
+if q != None:
+	print("Multiplication:")
+	print(q.matrix)
