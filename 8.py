@@ -9,7 +9,7 @@ def fib(num):
 
 n = int(input("Enter the limit: "))
 
-for i in range(n + 1):
+for i in range(n):
 	print(fib(i), end=" ")
 	
 print()
